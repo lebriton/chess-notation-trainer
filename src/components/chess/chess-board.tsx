@@ -1,5 +1,5 @@
 import { useMemo, type ReactNode } from "react";
-import { ChessCell } from "./chess_cell";
+import { ChessCell } from "./chess-cell";
 import { cn } from "@/lib/utils";
 import { useHighlights } from "@/hooks/use-highlights";
 

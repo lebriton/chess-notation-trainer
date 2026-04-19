@@ -1,4 +1,4 @@
-import { ChessBoard, ChessBoardFrame } from "@/components/chess/chess_board";
+import { ChessBoard, ChessBoardFrame } from "@/components/chess/chess-board";
 
 function App() {
   return (
