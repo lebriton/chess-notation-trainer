@@ -1,8 +1,8 @@
 import { create } from "zustand";
 
-type BoardSide = "white" | "black";
+export type BoardSide = "white" | "black";
 
-type SettingsStore = {
+export type SettingsStore = {
   boardSide: BoardSide;
   showSquareIndices: boolean;
 

@@ -1,4 +1,4 @@
-import { useSettingsStore } from "@/stores/settings.store";
+import { useSettingsStore, type BoardSide } from "@/stores/settings.store";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
@@ -16,7 +16,7 @@ function SettingsMenu() {
         variant="outline"
         type="single"
         value={boardSide}
-        onValueChange={toggleBoardSide}
+        onValueChange={(value) => toggleBoardSide(value as BoardSide)}
       >
         <ToggleGroupItem className="h-12 flex-1" value="white" aria-label="Toggle white">
           <img className="h-8" src="pieces/lichess/cburnett/wK.svg" alt="White" />
