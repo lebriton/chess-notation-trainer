@@ -18,10 +18,10 @@ function SettingsMenu() {
         value={boardSide}
         onValueChange={(value) => toggleBoardSide(value as BoardSide)}
       >
-        <ToggleGroupItem className="h-12 flex-1" value="white" aria-label="Toggle white">
+        <ToggleGroupItem className="h-10 flex-1" value="white" aria-label="Toggle white">
           <img className="h-8" src="pieces/lichess/cburnett/wK.svg" alt="White" />
         </ToggleGroupItem>
-        <ToggleGroupItem className="h-12 flex-1" value="black" aria-label="Toggle black">
+        <ToggleGroupItem className="h-10 flex-1" value="black" aria-label="Toggle black">
           <img className="h-8" src="pieces/lichess/cburnett/bK.svg" alt="Black" />
         </ToggleGroupItem>
       </ToggleGroup>
