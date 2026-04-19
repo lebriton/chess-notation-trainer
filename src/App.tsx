@@ -5,7 +5,7 @@ import { Layout } from "@/components/layout";
 import { useSettingsStore } from "@/stores/settings.store";
 import { SettingsMenu } from "@/components/app/settings-menu";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 function App() {
   const boardSide = useSettingsStore((state) => state.boardSide);
@@ -15,10 +15,13 @@ function App() {
 
   return (
     <Layout>
-      <div className="w-full flex flex-wrap gap-4 max-w-7xl">
-        <div className="w-full lg:flex-1 order-3 xl:order-1">
+      <div className="w-full flex flex-wrap gap-6 max-w-7xl">
+        <div className="w-full lg:flex-1 order-3 xl:order-1 space-y-6">
           <div className="mx-auto max-w-2xl lg:max-w-none">
             <Card>
+              <CardHeader>
+                <CardTitle>Settings</CardTitle>
+              </CardHeader>
               <CardContent>
                 <SettingsMenu />
               </CardContent>
@@ -27,8 +30,8 @@ function App() {
         </div>
 
         <div className="basis-full lg:basis-2xl order-1 lg:order-2">
-          <div className="w-full max-w-2xl mx-auto">
-            <ChessBoardFrame>
+          <div className="w-full max-w-2xl mx-auto space-y-6">
+            <ChessBoardFrame className="-mx-4 rounded-none sm:mx-0">
               <ChessBoard
                 side={boardSide}
                 renderCell={({ fIndex, rIndex, square }) => (
@@ -46,12 +49,25 @@ function App() {
         </div>
 
         <div className="w-full xl:flex-1 order-1 xl:order-3">
-          <div className="mx-auto max-w-2xl lg:max-w-none">
+          <div className="mx-auto max-w-2xl lg:max-w-none space-y-6">
             <Card>
               <CardContent>
-                <div className="flex justify-center">
+                <div className="flex justify-between items-center">
                   <Button size="lg">Start Training</Button>
+
+                  <span className="font-light text-2xl">
+                    30:000 <span className="text-base text-muted-foreground">s</span>
+                  </span>
                 </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>Score</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <span className="text-6xl font-thin">0</span>
               </CardContent>
             </Card>
           </div>
