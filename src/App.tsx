@@ -3,9 +3,9 @@ import { ChessBoard, ChessBoardFrame } from "@/components/chess/chess_board";
 function App() {
   return (
     <div className="flex justify-center items-center min-h-screen bg-[#161512]">
-      <div className="max-w-lg w-lg">
+      <div className="max-w-lg w-lg p-4">
         <ChessBoardFrame>
-          <ChessBoard side="black" />
+          <ChessBoard />
         </ChessBoardFrame>
       </div>
     </div>
