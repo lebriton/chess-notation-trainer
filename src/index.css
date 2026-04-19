@@ -128,3 +128,9 @@
     @apply font-sans;
   }
 }
+
+@theme {
+  --color-background: oklch(0.1957 0.0061 91.65);
+  --color-chesswhite: oklch(0.8951 0.0538 78.98);
+  --color-chessblack: oklch(0.6615 0.0752 60.41);
+}
