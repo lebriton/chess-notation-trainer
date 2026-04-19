@@ -4,9 +4,7 @@ export function useHighlights(initial: string[] = []) {
   const [highlighted, setHighlighted] = useState<string[]>(initial);
 
   const add = useCallback((square: string) => {
-    setHighlighted((prev) =>
-      prev.includes(square) ? prev : [...prev, square],
-    );
+    setHighlighted((prev) => (prev.includes(square) ? prev : [...prev, square]));
   }, []);
 
   const remove = useCallback((square: string) => {
@@ -15,9 +13,7 @@ export function useHighlights(initial: string[] = []) {
 
   const toggle = useCallback((square: string) => {
     setHighlighted((prev) =>
-      prev.includes(square)
-        ? prev.filter((s) => s !== square)
-        : [...prev, square],
+      prev.includes(square) ? prev.filter((s) => s !== square) : [...prev, square],
     );
   }, []);
 

@@ -20,9 +20,7 @@ function ChessCell({
       )}
       {...props}
     >
-      {highlighted && (
-        <div className="absolute inset-0 bg-[#ffff00]/25 pointer-events-none" />
-      )}
+      {highlighted && <div className="absolute inset-0 bg-[#ffff00]/25 pointer-events-none" />}
 
       <span className="opacity-50">{square}</span>
     </button>
