@@ -6,6 +6,7 @@ import { useSettingsStore } from "@/stores/settings.store";
 import { SettingsMenu } from "@/components/app/settings-menu";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ChessSideBadge } from "./components/chess/chess-side-badge";
 
 function App() {
   const boardSide = useSettingsStore((state) => state.boardSide);
@@ -27,24 +28,38 @@ function App() {
               </CardContent>
             </Card>
           </div>
+
+          <p className="text-xs text-muted-foreground [&>a]:underline [&>a]:hover:text-foreground">
+            <a href="https://github.com/lebriton/chess-notation-trainer">Source Code on GitHub</a>{" "}
+            &bull;{" "}
+            <a href="https://github.com/lebriton/chess-notation-trainer/blob/main/LICENSE">
+              MIT License
+            </a>
+          </p>
         </div>
 
         <div className="basis-full lg:basis-2xl order-1 lg:order-2">
           <div className="w-full max-w-2xl mx-auto space-y-6">
-            <ChessBoardFrame className="-mx-4 rounded-none sm:mx-0">
-              <ChessBoard
-                side={boardSide}
-                renderCell={({ fIndex, rIndex, square }) => (
-                  <ChessCell
-                    key={square}
-                    square={showSquareIndices ? square : "??"}
-                    variant={(fIndex + rIndex) % 2 === 1 ? "dark" : "light"}
-                    highlighted={highlighted.includes(square)}
-                    onClick={() => toggle(square)}
-                  />
-                )}
-              />{" "}
-            </ChessBoardFrame>
+            <div className="flex flex-col items-center gap-2">
+              <ChessSideBadge side={boardSide === "white" ? "black" : "white"} />
+
+              <ChessBoardFrame className="-mx-4 rounded-none sm:mx-0 w-full">
+                <ChessBoard
+                  side={boardSide}
+                  renderCell={({ fIndex, rIndex, square }) => (
+                    <ChessCell
+                      key={square}
+                      square={showSquareIndices ? square : "??"}
+                      variant={(fIndex + rIndex) % 2 === 1 ? "dark" : "light"}
+                      highlighted={highlighted.includes(square)}
+                      onClick={() => toggle(square)}
+                    />
+                  )}
+                />{" "}
+              </ChessBoardFrame>
+
+              <ChessSideBadge side={boardSide === "white" ? "white" : "black"} />
+            </div>
           </div>
         </div>
 
