@@ -5,8 +5,9 @@
     { "path": "./tsconfig.node.json" }
   ],
 
-  /* shadcn/ui */
   "compilerOptions": {
+    /* shadcn/ui */
+    "ignoreDeprecations": "6.0",
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
