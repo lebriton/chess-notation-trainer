@@ -15,7 +15,7 @@ function App() {
 
   return (
     <Layout>
-      <div className="w-full flex flex-wrap gap-4">
+      <div className="w-full flex flex-wrap gap-4 max-w-7xl">
         <div className="w-full lg:flex-1 order-3 xl:order-1">
           <div className="mx-auto max-w-2xl lg:max-w-none">
             <Card>
