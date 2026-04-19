@@ -1,73 +1,59 @@
-# React + TypeScript + Vite
+# ♟️ Chess Notation Trainer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple, client-side React app designed to help you get comfortable with chess notation and board coordinates.
 
-Currently, two official plugins are available:
+This project is part of my personal chess journey — **road to 2000 ELO** — and focuses on building fluency with algebraic notation and board visualization.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🎯 Purpose
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+When learning chess seriously, one of the early but critical skills is quickly recognizing:
 
-## Expanding the ESLint configuration
+- Board coordinates (a1, e4, h7, etc.)
+- Piece movement notation
+- Visualizing moves without needing to physically move pieces
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This tool is built to make that muscle memory automatic through repetition and lightweight practice.
 
-```js
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🧠 What it does
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+The Chess Notation Trainer helps you:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Practice identifying random squares on a chessboard
+- Improve recognition of chess grid coordinates
+- Build speed and accuracy with notation reading
+- Strengthen board visualization skills
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
+No engines. No distractions. Just repetition and learning.
 
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+---
+
+## 🛠️ Tech Stack
+
+- ⚛️ React (client-only SPA)
+- ⚡ Vite
+- 🎨 Tailwind CSS + shadcn/ui
+- 🚀 Deployed via GitHub Pages
+
+This is a fully static frontend app — no backend, no database, no server logic.
+
+---
+
+## 🌍 Live Demo
+
+👉 https://lebriton.github.io/chess-notation-trainer
+
+---
+
+## 📦 Installation & Development
+
+```bash
+# install dependencies
+pnpm install
+
+# run locally
+pnpm dev
 ```
