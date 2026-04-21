@@ -18,7 +18,7 @@ function Layout({
         "grid gap-6",
         "grid-cols-1",
         "lg:grid-flow-col lg:grid-cols-[auto_1fr] lg:grid-rows-2",
-        "xl:grid-cols-[1fr_2fr_1fr] xl:grid-rows-1",
+        "xl:grid-cols-[1fr_auto_1fr] xl:grid-rows-1",
         className,
       )}
     >

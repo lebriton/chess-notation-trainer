@@ -62,7 +62,11 @@ function C() {
 }
 
 function App() {
-  return <Layout className="m-4" a={<A />} b={<B />} c={<C />} />;
+  return (
+    <div className="m-4">
+      <Layout className="w-full max-w-360 mx-auto" a={<A />} b={<B />} c={<C />} />
+    </div>
+  );
 }
 
 export default App;
