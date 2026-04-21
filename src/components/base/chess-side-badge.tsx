@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
+import type { ChessColor } from "@/types/chess.types";
 
-function ChessSideBadge({ side }: { side: "white" | "black" }) {
+function ChessSideBadge({ side }: { side: ChessColor }) {
   switch (side) {
     case "white":
       return (

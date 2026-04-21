@@ -1,7 +1,8 @@
-import { useSettingsStore, type BoardSide, type Language } from "@/stores/settings.store";
+import { useSettingsStore, type Language } from "@/stores/settings.store";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import type { ChessColor } from "@/types/chess.types";
 
 function SettingsMenu() {
   const boardSide = useSettingsStore((state) => state.boardSide);
@@ -33,7 +34,7 @@ function SettingsMenu() {
         variant="outline"
         type="single"
         value={boardSide}
-        onValueChange={(value) => toggleBoardSide(value as BoardSide)}
+        onValueChange={(value) => toggleBoardSide(value as ChessColor)}
       >
         <ToggleGroupItem className="h-10 flex-1" value="white" aria-label="Toggle white">
           <img className="h-8" src="pieces/lichess/cburnett/wK.svg" alt="White" />

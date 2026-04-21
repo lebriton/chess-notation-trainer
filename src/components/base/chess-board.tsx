@@ -1,5 +1,6 @@
 import { type ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import type { ChessColor } from "@/types/chess.types";
 
 const files = ["a", "b", "c", "d", "e", "f", "g", "h"];
 const ranks = [8, 7, 6, 5, 4, 3, 2, 1];
@@ -10,7 +11,7 @@ function ChessBoard({
   renderCell,
 }: {
   className?: string;
-  side?: "white" | "black";
+  side?: ChessColor;
   renderCell: (args: {
     file: string;
     rank: number;
