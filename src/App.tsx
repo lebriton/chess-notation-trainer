@@ -11,7 +11,9 @@ function A() {
       <Card>
         <CardContent>
           <div className="flex justify-between items-center">
-            <Button size="lg"><PlayIcon/> Start Training</Button>
+            <Button size="lg">
+              <PlayIcon /> Start Training
+            </Button>
 
             <span className="font-light text-2xl">
               30:000 <span className="text-base text-muted-foreground">s</span>

@@ -24,9 +24,9 @@ function FullChessBoard({
     <div className={cn("flex flex-col items-center gap-2", className)}>
       <ChessSideBadge side={boardSide === "white" ? "black" : "white"} />
 
-      <ChessBoardFrame className={cn("w-full", classNames.frame)}>
+      <ChessBoardFrame className={cn("w-full", classNames?.frame)}>
         <ChessBoard
-          className={classNames.board}
+          className={classNames?.board}
           side={boardSide}
           renderCell={({ fIndex, rIndex, square }) => (
             <ChessCell
