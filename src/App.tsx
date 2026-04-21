@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
 import { SettingsMenu } from "@/components/features/settings/settings-menu";
 import { Button } from "@/components/ui/button";
 import { PlayIcon } from "lucide-react";
+import { BigText } from "./components/big-text";
 
 function A() {
   return (
@@ -35,7 +36,16 @@ function A() {
 }
 
 function B() {
-  return <FullChessBoard className="-mx-4 sm:mx-0" classNames={{ frame: "rounded-none" }} />;
+  return (
+    <div className="relative">
+      <FullChessBoard className="-mx-4 sm:mx-0" classNames={{ frame: "rounded-none" }} />
+
+      <BigText
+        className="absolute top-1/2 left-1/2 -translate-1/2 z-10 pointer-events-none"
+        text="g7"
+      />
+    </div>
+  );
 }
 
 function C() {

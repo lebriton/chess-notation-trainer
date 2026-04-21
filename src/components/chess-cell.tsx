@@ -1,36 +1,40 @@
 import { cn } from "@/lib/utils";
+import type { ReactNode } from "react";
 
 function ChessCell({
+  className,
   square,
   variant,
-  highlighted = false,
+  children,
   ...props
 }: React.ComponentProps<"button"> & {
+  className?: string;
   square: string;
   variant: "light" | "dark";
-  highlighted?: boolean;
+  children?: ReactNode;
 }) {
   return (
     <button
       type="button"
       className={cn(
-        "relative aspect-square w-full flex items-center justify-center text-xs sm:text-sm font-medium select-none cursor-pointer transition",
+        "group/cell relative aspect-square",
         variant === "light" && "bg-chesswhite",
         variant === "dark" && "bg-chessblack",
+        className,
       )}
       {...props}
     >
-      {highlighted && <div className="absolute inset-0 bg-[#ffff00]/25 pointer-events-none" />}
-
       <span
         className={cn(
-          "absolute top-1 right-1 opacity-50 text-xs sm:text-sm font-medium uppercase",
+          "absolute top-1 right-1 text-xs sm:text-sm font-medium z-10",
           variant === "light" && "text-chessblack",
           variant === "dark" && "text-chesswhite",
         )}
       >
         {square}
       </span>
+
+      {children}
     </button>
   );
 }

@@ -1,6 +1,6 @@
-import { ChessBoard, ChessBoardFrame } from "@/components/base/chess-board";
-import { ChessCell } from "@/components/base/chess-cell";
-import { ChessSideBadge } from "@/components/base/chess-side-badge";
+import { ChessBoard, ChessBoardFrame } from "@/components/chess-board";
+import { ChessCell } from "@/components/chess-cell";
+import { ChessSideBadge } from "@/components/chess-side-badge";
 import { useHighlights } from "@/hooks/use-highlights";
 import { cn } from "@/lib/utils";
 import { useSettingsStore } from "@/stores/settings.store";
@@ -31,13 +31,17 @@ function FullChessBoard({
           renderCell={({ fIndex, rIndex, square }) => (
             <ChessCell
               key={square}
-              square={showSquareIndices ? square : "??"}
+              square={showSquareIndices || highlighted.includes(square) ? square : ""}
               variant={(fIndex + rIndex) % 2 === 1 ? "dark" : "light"}
-              highlighted={highlighted.includes(square)}
               onClick={() => toggle(square)}
-            />
+            >
+              <div className="absolute z-5 inset-0 bg-[#ffff00]/25 opacity-0 group-hover/cell:opacity-100 pointer-events-none" />
+              {highlighted.includes(square) && (
+                <div className="absolute z-5 inset-0 bg-[#ff00ff]/25 pointer-events-none" />
+              )}
+            </ChessCell>
           )}
-        />{" "}
+        />
       </ChessBoardFrame>
 
       <ChessSideBadge side={boardSide === "white" ? "white" : "black"} />
